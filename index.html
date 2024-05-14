@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculateur de prix</title>
+</head>
+<body>
+    <h1>Calculateur de prix</h1>
+    <section id="tires">
+        <h2>Pneumatiques</h2>
+        <div class="form">
+            <label for="tyre-buy-price">Prix d'achat :</label>
+            <input type="number" id="tyre-buy-price" required>
+            <label for="tyre-margin">Marge fixe :</label>
+            <input type="number" id="tyre-margin" required>
+            <label for="tyre-BF"> BF :</label>
+            <input type="number" id="tyre-BF" required>
+            <button id="calc-btn">Calculer</button>
+            <button id="clear-btn">Effacer</button>
+        </div>
+        <table id="table" aria-describedby="Tableau de valeurs">
+            <thead>
+                <tr>
+                    <th>Prix d'achat :</th>
+                    <th>Marge :</th>
+                    <th>Prix + Marge :</th>
+                    <th>BF :</th>
+                    <th>Remise max :</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Les lignes du tableau seront ajoutées dynamiquement -->
+            </tbody>
+        </table>
+    </section>
+    <section id="parts">
+        <h2>Pièces techniques</h2>
+        <h3>En cours de développement...</h3>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
