@@ -11,6 +11,8 @@
     <section id="tires">
         <h2>Pneumatiques</h2>
         <div class="form">
+            <label for="tyre-brand">Marque</label>
+            <input type="text" id="tyre-brand">
             <label for="tyre-buy-price">Prix d'achat :</label>
             <input type="number" id="tyre-buy-price" required>
             <label for="tyre-margin">Marge fixe :</label>
@@ -23,7 +25,8 @@
         <table id="table" aria-describedby="Tableau de valeurs">
             <thead>
                 <tr>
-                    <th>Prix d'achat</th>
+                    <th>Marque</th>
+                    <th>P.A.</th>
                     <th>Marge</th>
                     <th>Prix + Marge</th>
                     <th>BF</th>
@@ -37,6 +40,7 @@
         <table id="reversed-table" aria-describedby="Tableau de valeurs">
             <thead>
                 <tr>
+                    <th>Marque</th>
                     <th>Tarif BF</th>
                     <th>Remise calculée</th>
                     <th>Prix remisé</th>
