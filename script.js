@@ -29,6 +29,11 @@ document.getElementById('calc-btn').addEventListener('click', function() {
     // Calcul de la marge finale
     let margeFinaleInf = ((tyreBF - (tyreBF * remiseInf) / 100) - tyreBuyPrice).toFixed(2);
     let margeFinaleSup = ((tyreBF - (tyreBF * remiseSup) / 100) - tyreBuyPrice).toFixed(2);
+    // Calcul du prix TTC
+    const tva = 1.20;
+    let prixTotalInf = prixRemiseInf * tva;
+    let prixTotalSup = prixRemiseSup * tva;
+
 
 
     // Gestion du tableau de calcul de départ
@@ -64,11 +69,13 @@ document.getElementById('calc-btn').addEventListener('click', function() {
         newRowInf.insertCell(),
         newRowInf.insertCell(),
         newRowInf.insertCell(),
+        newRowInf.insertCell(),
         newRowInf.insertCell()
     ];
 
     // Ajoute les cellules à la ligne pour l'arrondi supérieur
     let cellsSup = [
+        newRowSup.insertCell(),
         newRowSup.insertCell(),
         newRowSup.insertCell(),
         newRowSup.insertCell(),
@@ -81,11 +88,13 @@ document.getElementById('calc-btn').addEventListener('click', function() {
     cellsInf[1].textContent = tyreBF.toFixed(2) + "€";
     cellsInf[2].textContent = remiseInf + "%";
     cellsInf[3].textContent = prixRemiseInf + "€";
-    cellsInf[4].innerHTML = "<span style='font-weight: bold; color: green;'>" + margeFinaleInf + "€</span>";
+    cellsInf[4].textContent = prixTotalInf + "€";
+    cellsInf[5].innerHTML = "<span style='font-weight: bold; color: green;'>" + margeFinaleInf + "€</span>";
 
     cellsSup[1].textContent = remiseSup + "%";
     cellsSup[2].textContent = prixRemiseSup + "€";
-    cellsSup[3].innerHTML = "<span style='font-weight: bold; color: red;'>" + margeFinaleSup + "€</span>";
+    cellsSup[3].textContent = prixTotalSup + "€";
+    cellsSup[4].innerHTML = "<span style='font-weight: bold; color: red;'>" + margeFinaleSup + "€</span>";
 });
 
 document.getElementById('clear-btn').addEventListener('click', function(){
